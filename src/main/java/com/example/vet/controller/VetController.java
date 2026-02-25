@@ -1,12 +1,11 @@
 package com.example.vet.controller;
 
-import com.example.vet.repository.model.Pet;
+import com.example.vet.controller.model.PetDto;
 import com.example.vet.service.VetService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
+@RequestMapping("")
 @RestController
 public class VetController {
 
@@ -16,8 +15,14 @@ public class VetController {
         this.vetService = vetService;
     }
 
-    @GetMapping("/pets")
-    public List<Pet> getPets(){
-        return vetService.getPets();
+    @GetMapping("/{id}")
+    public ResponseEntity<PetDto> getPet(@PathVariable Long id) {
+        return ResponseEntity.ok((PetDto) vetService.getPets(id));
+    }
+
+    @PostMapping("/pet")
+    public ResponseEntity<PetDto> addPet() {
+        return ResponseEntity.ok(vetService.addPets());
     }
 }
+
