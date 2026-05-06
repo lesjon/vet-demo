@@ -1,7 +1,8 @@
 Applicatieomschrijving:
  
-Een dierenkliniek wilt een applicatie bouwen om in te kunnen zien welke huisdieren er bij welke eigenaren horen.
+Een dierenkliniek wil een applicatie bouwen om in te kunnen zien welke huisdieren er bij welke eigenaren horen.
 De eigenaren en huisdieren staan geregistreerd in een huishouden. Een huishouden kan meerdere eigenaren hebben en meerdere huisdieren.
+Het databasemodel is al gedefinieerd in sql scripts.
  
  
 De Controller, Service, Repository en Entities staan al in de applicatie.
